@@ -2,7 +2,7 @@ import React from 'react'
 import TableRow from './TableRow'
 import {Vortex} from "react-loader-spinner"
 import styles from "./TableCoin.module.css"
-function TableCoin({ coins,isLoading }) {
+function TableCoin({ coins,isLoading ,setChart ,currency }) {
   return (
     <div className={styles.container}>
         {isLoading?(
@@ -21,7 +21,7 @@ function TableCoin({ coins,isLoading }) {
                 </thead>
             <tbody>
                 {coins.map(coin => 
-                <TableRow coin={coin} key={coin.id} />)}
+                <TableRow coin={coin} key={coin.id} setChart={setChart} currency={currency} />)}
             </tbody>
         </table>
         )}
